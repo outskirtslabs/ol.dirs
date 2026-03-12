@@ -1,7 +1,99 @@
 # ol.dirs
 
-> A 0-dep impl of XDG base directory, Windows Known Folder API, and macOS Standard Directories for Clojure, ClojureScript, and ClojureDart.
+> A 0-dep impl of XDG base directory, systemd unit dirs, Windows Known Folder API, and macOS Standard Directories for Clojure, ClojureScript, and ClojureDart.
 
+`ol.dirs` returns string paths or vectors of string paths. It does not create directories, does not check whether they exist, and carries no runtime dependencies.
+
+Support Matrix
+
+| Runtime               | Linux | macOS | Windows |
+|-----------------------|-------|-------|---------|
+| Clojure               | yes   | yes   | yes     |
+| ClojureScript on Node | yes   | yes   | yes     |
+| ClojureDart           | yes   | yes   | yes     |
+
+## Example Usage
+
+```clojure
+(require '[ol.dirs :as dirs])
+
+(dirs/config-home)
+;; => "/home/alice/.config"
+
+(dirs/config-home "My App")
+;; => "/home/alice/.config/my-app"
+
+(dirs/config-home "org" "Acme Corp" "My App")
+;; Linux:   "/home/alice/.config/my-app"
+;; macOS:   "/Users/Alice/Library/Application Support/org.Acme-Corp.My-App"
+;; Windows: "C:\\Users\\Alice\\AppData\\Roaming\\Acme Corp\\My App"
+```
+
+## API Notes
+
+These functions support app-specific arities. Arity `0` returns the base directory, arity `1` appends an application name, and arity `3` appends a platform-specific qualifier/organization/application path. The concrete path shapes are shown below in the `App Path Rules` table and in the example above.
+
+`data-home`, `config-home`, `state-home`, `cache-home`, `runtime-dir`, `executable-dir`, `preference-dir`, `state-dir`, and `config-dir` all support those same arities.
+
+`data-dirs` and `config-dirs` do too, but return vectors and append the application path to each search root.
+
+### App Path Rules
+
+| Form                           | Linux    | macOS                  | Windows            |
+|--------------------------------|----------|------------------------|--------------------|
+| `("My App")`                   | `my-app` | `My-App`               | `My App`           |
+| `("org" "Acme Corp" "My App")` | `my-app` | `org.Acme-Corp.My-App` | `Acme Corp\My App` |
+
+### Base Directories
+
+| Function         | Linux                                                | macOS                               | Windows          |
+|------------------|------------------------------------------------------|-------------------------------------|------------------|
+| `home-dir`       | `$HOME`                                              | `$HOME`                             | `%USERPROFILE%`  |
+| `data-home`      | `$XDG_DATA_HOME` or `$HOME/.local/share`             | `$HOME/Library/Application Support` | `%AppData%`      |
+| `config-home`    | `$XDG_CONFIG_HOME` or `$HOME/.config`                | `$HOME/Library/Application Support` | `%AppData%`      |
+| `state-home`     | `$XDG_STATE_HOME` or `$HOME/.local/state`            | `$HOME/Library/Application Support` | `%LocalAppData%` |
+| `cache-home`     | `$XDG_CACHE_HOME` or `$HOME/.cache`                  | `$HOME/Library/Caches`              | `%LocalAppData%` |
+| `data-dirs`      | `$XDG_DATA_DIRS` or `/usr/local/share`, `/usr/share` | `/Library/Application Support`      | `%ProgramData%`  |
+| `config-dirs`    | `$XDG_CONFIG_DIRS` or `/etc/xdg`                     | `/Library/Application Support`      | `%ProgramData%`  |
+| `preference-dir` | same as `config-home`                                | `$HOME/Library/Preferences`         | `%AppData%`      |
+| `runtime-dir`    | `$XDG_RUNTIME_DIR` or `nil`                          | `nil`                               | `nil`            |
+| `executable-dir` | `$XDG_BIN_HOME` or `$XDG_DATA_HOME/../bin`           | `nil`                               | `nil`            |
+
+On Linux, trusted systemd units can override `config-home`, `state-home`, and `cache-home` via `CONFIGURATION_DIRECTORY`, `STATE_DIRECTORY`, and `CACHE_DIRECTORY` (read `man 5 systemd.exec`)
+
+### User-Facing Directories
+
+| Function       | Linux                                       | macOS                 | Windows                |
+|----------------|---------------------------------------------|-----------------------|------------------------|
+| `audio-dir`    | `XDG_MUSIC_DIR` from `user-dirs.dirs`       | `$HOME/Music`         | Music Known Folder     |
+| `desktop-dir`  | `XDG_DESKTOP_DIR` from `user-dirs.dirs`     | `$HOME/Desktop`       | Desktop Known Folder   |
+| `document-dir` | `XDG_DOCUMENTS_DIR` from `user-dirs.dirs`   | `$HOME/Documents`     | Documents Known Folder |
+| `download-dir` | `XDG_DOWNLOAD_DIR` from `user-dirs.dirs`    | `$HOME/Downloads`     | Downloads Known Folder |
+| `font-dir`     | `$XDG_DATA_HOME/fonts`                      | `$HOME/Library/Fonts` | `nil`                  |
+| `picture-dir`  | `XDG_PICTURES_DIR` from `user-dirs.dirs`    | `$HOME/Pictures`      | Pictures Known Folder  |
+| `public-dir`   | `XDG_PUBLICSHARE_DIR` from `user-dirs.dirs` | `$HOME/Public`        | Public Known Folder    |
+| `template-dir` | `XDG_TEMPLATES_DIR` from `user-dirs.dirs`   | `nil`                 | Templates Known Folder |
+| `video-dir`    | `XDG_VIDEOS_DIR` from `user-dirs.dirs`      | `$HOME/Movies`        | Videos Known Folder    |
+
+## Nil Semantics
+
+These functions may return `nil` by design:
+
+- `runtime-dir` and `executable-dir` on non-Linux platforms
+- `font-dir` on Windows
+- `template-dir` on macOS
+- Linux user-facing directories when `user-dirs.dirs` is missing, unreadable, disabled, or malformed
+
+## Development
+
+```bash
+bb test:clj
+bb test:cljs
+bb test:cljd
+bb test
+```
+
+The CLJD workspace commands live under [`dart/`](./dart), because the dart toolchain barfs out a bunch of files that I don't want to see.
 
 ## License: European Union Public License 1.2
 

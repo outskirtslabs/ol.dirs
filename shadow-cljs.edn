@@ -1,0 +1,17 @@
+{:deps {:aliases [:dev]}
+ :build-defaults
+ {:compiler-options
+  {:output-feature-set :es2020
+   :output-wrapper false
+   :source-map true
+   :source-map-include-sources-content true
+   :source-map-detail-level :all
+   :warnings {:fn-deprecated false}}}
+ :builds
+ {:kaocha-test
+  {:target :node-test
+   :output-to "target/kaocha-tests.js"
+   :output-dir "target/kaocha-test/"
+   :ns-regexp ".*-test$"
+   :main ol.dirs.cljs-test-runner/main
+   :autorun false}}}

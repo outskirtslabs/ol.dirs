@@ -14,3 +14,9 @@ extra/
 prompts/PROMPTS.md
 result
 .env
+.shadow-cljs
+node_modules/
+prompts/
+/dart/*
+!/dart/deps.edn
+!/dart/README.md

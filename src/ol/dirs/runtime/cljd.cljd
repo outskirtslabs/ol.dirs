@@ -1,0 +1,51 @@
+(ns ol.dirs.runtime.cljd
+  {:no-dynamic true}
+  (:require ["dart:io" :as dart-io]
+            [clojure.string :as str]
+            [ol.dirs.impl :as impl]))
+
+(defn- platform-keyword []
+  (cond
+    dart-io/Platform.isWindows :windows
+    dart-io/Platform.isMacOS :macos
+    :else :linux))
+
+(defn- read-user-dirs-content [home]
+  (let [path (str home dart-io/Platform.pathSeparator ".config" dart-io/Platform.pathSeparator "user-dirs.dirs")
+        file (dart-io/File path)]
+    (when (.existsSync file)
+      (.readAsStringSync file))))
+
+(defn- windows-folders [env home]
+  (let [sep dart-io/Platform.pathSeparator
+        join (fn [& parts]
+               (str/join sep parts))]
+    {:roaming-app-data (get env "APPDATA")
+     :local-app-data (get env "LOCALAPPDATA")
+     :common-app-data (get env "PROGRAMDATA")
+     :desktop (join home "Desktop")
+     :documents (join home "Documents")
+     :downloads (join home "Downloads")
+     :music (join home "Music")
+     :pictures (join home "Pictures")
+     :public (or (get env "PUBLIC") (join (or (get env "SystemDrive") "C:") "Users" "Public"))
+     :templates (when-let [appdata (get env "APPDATA")]
+                  (join appdata "Microsoft" "Windows" "Templates"))
+     :videos (join home "Videos")}))
+
+(defn current-context []
+  (let [env (into {} dart-io/Platform.environment)
+        os (platform-keyword)
+        home (or (when (= os :windows)
+                   (impl/windows-home-directory env))
+                 (get env "HOME"))
+        base {:os os
+              :home home
+              :env env
+              :pid dart-io/pid
+              :path-separator dart-io/Platform.pathSeparator
+              :path-list-separator (if (= os :windows) ";" ":")}]
+    (case os
+      :linux (assoc base :user-dirs-content (read-user-dirs-content home))
+      :macos base
+      :windows (assoc base :folders (windows-folders env home)))))

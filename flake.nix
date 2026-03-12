@@ -6,10 +6,13 @@
     devshell.inputs.nixpkgs.follows = "nixpkgs";
     devenv.url = "https://flakehub.com/f/ramblurr/nix-devenv/*";
     devenv.inputs.nixpkgs.follows = "nixpkgs";
+    clj-nix.url = "github:jlesquembre/clj-nix";
+    clj-nix.inputs.nixpkgs.follows = "nixpkgs";
   };
   outputs =
     inputs@{
       self,
+      clj-nix,
       devenv,
       devshell,
       ...
@@ -19,7 +22,61 @@
       withOverlays = [
         devshell.overlays.default
         devenv.overlays.default
+        clj-nix.overlays.default
       ];
+      packages = {
+        default =
+          pkgs:
+          let
+            root = toString ./.;
+            gitRev =
+              if self ? rev then
+                self.rev
+              else if self ? dirtyRev then
+                self.dirtyRev
+              else
+                "dirty";
+            projectSrc = pkgs.lib.cleanSourceWith {
+              src = ./.;
+              filter =
+                path: _type:
+                let
+                  rel = pkgs.lib.removePrefix (root + "/") (toString path);
+                  base = builtins.baseNameOf path;
+                in
+                !(
+                  base == ".git"
+                  || rel == "result"
+                  || pkgs.lib.hasPrefix "target/" rel
+                  || pkgs.lib.hasPrefix ".shadow-cljs/" rel
+                  || pkgs.lib.hasPrefix "node_modules/" rel
+                  || pkgs.lib.hasPrefix "dart/.dart_tool/" rel
+                  || pkgs.lib.hasPrefix "dart/.clojuredart/" rel
+                  || pkgs.lib.hasPrefix "dart/lib/cljd-out/" rel
+                  || pkgs.lib.hasPrefix "dart/test/cljd-out/" rel
+                );
+            };
+          in
+          pkgs.mkCljLib {
+            inherit projectSrc;
+            name = "com.outskirtslabs/ol.dirs";
+            version = "0.0.1";
+            nativeBuildInputs = [
+              pkgs.coreutils
+              pkgs.nodejs
+            ];
+            GIT_REV = gitRev;
+            JAVA_HOME = pkgs.jdk25.home;
+            buildCommand = ''
+              export JAVA_HOME="${pkgs.jdk25.home}"
+              export JAVA_CMD="${pkgs.jdk25}/bin/java"
+              clojure -M:dev:kaocha :unit
+              clojure -M:dev:shadow-cljs compile kaocha-test
+              node target/kaocha-tests.js
+              clojure -T:build jar
+            '';
+          };
+      };
       devShell =
         pkgs:
         pkgs.devshell.mkShell {
@@ -27,12 +84,14 @@
             devenv.capsules.base
             devenv.capsules.clojure
           ];
-          # https://numtide.github.io/devshell
           commands = [
             # { package = pkgs.bazqux; }
           ];
           packages = [
-            # pkgs.foobar
+            pkgs.dart
+            pkgs.deps-lock
+            pkgs.jdk25
+            pkgs.nodejs
           ];
 
         };

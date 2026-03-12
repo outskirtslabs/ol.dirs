@@ -12,9 +12,23 @@
          {:doc  "Start a local development server"
           :task (apply clojure "-M:repl/dev:dev" *command-line-args*)}
 
+         test:clj
+         {:doc  "Run the JVM test suites"
+          :task (apply clojure "-M:dev:kaocha" (concat [":unit"] *command-line-args*))}
+
+         test:cljs
+         {:doc  "Run the Node CLJS test suites"
+          :task (do
+                  (apply clojure "-M:dev:shadow-cljs" "compile" "kaocha-test" *command-line-args*)
+                  (shell "node" "target/kaocha-tests.js"))}
+
+         test:cljd
+         {:doc  "Run the CLJD test suite"
+          :task (shell {:dir "dart"} "clojure" "-M:cljd:cljd-test" "test")}
+
          test
-         {:doc  "Run all tests or specific test suites"
-          :task (apply clojure "-M:dev:kaocha" *command-line-args*)}
+         {:doc     "Run JVM, CLJS, and CLJD test suites"
+          :depends [test:clj test:cljs test:cljd]}
 
          fmt
          {:doc  "Format code with cljfmt"

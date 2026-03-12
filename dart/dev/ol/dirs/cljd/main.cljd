@@ -1,0 +1,14 @@
+(ns ol.dirs.cljd.main
+  {:no-dynamic true}
+  (:require [ol.dirs.impl :as impl]))
+
+(defn main []
+  (impl/resolve-directory
+   {:os :linux
+    :home "/tmp"
+    :pid 1
+    :path-separator "/"
+    :path-list-separator ":"
+    :env {}
+    :user-dirs-content nil}
+   :config-home))
