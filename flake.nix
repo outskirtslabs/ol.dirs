@@ -59,7 +59,7 @@
           in
           pkgs.mkCljLib {
             inherit projectSrc;
-            name = "com.outskirtslabs/ol.dirs";
+            name = "com.outskirtslabs/dirs";
             version = "0.0.1";
             nativeBuildInputs = [
               pkgs.coreutils

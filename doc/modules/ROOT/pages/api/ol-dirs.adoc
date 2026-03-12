@@ -31,7 +31,7 @@ _platforms: clj_
 Returns the writable user data directory.
 
 [.api-source]
-link:https://github.com/outskirtslabs/ol.dirs/blob/main/src/ol/dirs.cljc#L14-L19[source,window=_blank]
+link:https://github.com/outskirtslabs/dirs/blob/main/src/ol/dirs.cljc#L14-L19[source,window=_blank]
 
 [discrete]
 === cljs
@@ -48,7 +48,7 @@ _platforms: cljs_
 Returns the writable user data directory.
 
 [.api-source]
-link:https://github.com/outskirtslabs/ol.dirs/blob/main/src/ol/dirs.cljc#L14-L19[source,window=_blank]
+link:https://github.com/outskirtslabs/dirs/blob/main/src/ol/dirs.cljc#L14-L19[source,window=_blank]
 
 '''
 
@@ -71,7 +71,7 @@ _platforms: clj_
 Returns the writable user configuration directory.
 
 [.api-source]
-link:https://github.com/outskirtslabs/ol.dirs/blob/main/src/ol/dirs.cljc#L21-L26[source,window=_blank]
+link:https://github.com/outskirtslabs/dirs/blob/main/src/ol/dirs.cljc#L21-L26[source,window=_blank]
 
 [discrete]
 === cljs
@@ -88,7 +88,7 @@ _platforms: cljs_
 Returns the writable user configuration directory.
 
 [.api-source]
-link:https://github.com/outskirtslabs/ol.dirs/blob/main/src/ol/dirs.cljc#L21-L26[source,window=_blank]
+link:https://github.com/outskirtslabs/dirs/blob/main/src/ol/dirs.cljc#L21-L26[source,window=_blank]
 
 '''
 
@@ -111,7 +111,7 @@ _platforms: clj_
 Returns the writable user state directory.
 
 [.api-source]
-link:https://github.com/outskirtslabs/ol.dirs/blob/main/src/ol/dirs.cljc#L28-L33[source,window=_blank]
+link:https://github.com/outskirtslabs/dirs/blob/main/src/ol/dirs.cljc#L28-L33[source,window=_blank]
 
 [discrete]
 === cljs
@@ -128,7 +128,7 @@ _platforms: cljs_
 Returns the writable user state directory.
 
 [.api-source]
-link:https://github.com/outskirtslabs/ol.dirs/blob/main/src/ol/dirs.cljc#L28-L33[source,window=_blank]
+link:https://github.com/outskirtslabs/dirs/blob/main/src/ol/dirs.cljc#L28-L33[source,window=_blank]
 
 '''
 
@@ -151,7 +151,7 @@ _platforms: clj_
 Returns the shared data search roots as a vector of strings.
 
 [.api-source]
-link:https://github.com/outskirtslabs/ol.dirs/blob/main/src/ol/dirs.cljc#L35-L40[source,window=_blank]
+link:https://github.com/outskirtslabs/dirs/blob/main/src/ol/dirs.cljc#L35-L40[source,window=_blank]
 
 [discrete]
 === cljs
@@ -168,7 +168,7 @@ _platforms: cljs_
 Returns the shared data search roots as a vector of strings.
 
 [.api-source]
-link:https://github.com/outskirtslabs/ol.dirs/blob/main/src/ol/dirs.cljc#L35-L40[source,window=_blank]
+link:https://github.com/outskirtslabs/dirs/blob/main/src/ol/dirs.cljc#L35-L40[source,window=_blank]
 
 '''
 
@@ -191,7 +191,7 @@ _platforms: clj_
 Returns the shared configuration search roots as a vector of strings.
 
 [.api-source]
-link:https://github.com/outskirtslabs/ol.dirs/blob/main/src/ol/dirs.cljc#L42-L47[source,window=_blank]
+link:https://github.com/outskirtslabs/dirs/blob/main/src/ol/dirs.cljc#L42-L47[source,window=_blank]
 
 [discrete]
 === cljs
@@ -208,7 +208,7 @@ _platforms: cljs_
 Returns the shared configuration search roots as a vector of strings.
 
 [.api-source]
-link:https://github.com/outskirtslabs/ol.dirs/blob/main/src/ol/dirs.cljc#L42-L47[source,window=_blank]
+link:https://github.com/outskirtslabs/dirs/blob/main/src/ol/dirs.cljc#L42-L47[source,window=_blank]
 
 '''
 
@@ -231,7 +231,7 @@ _platforms: clj_
 Returns the writable user cache directory.
 
 [.api-source]
-link:https://github.com/outskirtslabs/ol.dirs/blob/main/src/ol/dirs.cljc#L49-L54[source,window=_blank]
+link:https://github.com/outskirtslabs/dirs/blob/main/src/ol/dirs.cljc#L49-L54[source,window=_blank]
 
 [discrete]
 === cljs
@@ -248,7 +248,7 @@ _platforms: cljs_
 Returns the writable user cache directory.
 
 [.api-source]
-link:https://github.com/outskirtslabs/ol.dirs/blob/main/src/ol/dirs.cljc#L49-L54[source,window=_blank]
+link:https://github.com/outskirtslabs/dirs/blob/main/src/ol/dirs.cljc#L49-L54[source,window=_blank]
 
 '''
 
@@ -271,7 +271,7 @@ _platforms: clj_
 Returns the runtime directory, or `nil` on platforms without one.
 
 [.api-source]
-link:https://github.com/outskirtslabs/ol.dirs/blob/main/src/ol/dirs.cljc#L56-L61[source,window=_blank]
+link:https://github.com/outskirtslabs/dirs/blob/main/src/ol/dirs.cljc#L56-L61[source,window=_blank]
 
 [discrete]
 === cljs
@@ -288,7 +288,7 @@ _platforms: cljs_
 Returns the runtime directory, or `nil` on platforms without one.
 
 [.api-source]
-link:https://github.com/outskirtslabs/ol.dirs/blob/main/src/ol/dirs.cljc#L56-L61[source,window=_blank]
+link:https://github.com/outskirtslabs/dirs/blob/main/src/ol/dirs.cljc#L56-L61[source,window=_blank]
 
 '''
 
@@ -311,7 +311,7 @@ _platforms: clj_
 Returns the user executable directory, or `nil` when unsupported.
 
 [.api-source]
-link:https://github.com/outskirtslabs/ol.dirs/blob/main/src/ol/dirs.cljc#L63-L68[source,window=_blank]
+link:https://github.com/outskirtslabs/dirs/blob/main/src/ol/dirs.cljc#L63-L68[source,window=_blank]
 
 [discrete]
 === cljs
@@ -328,7 +328,7 @@ _platforms: cljs_
 Returns the user executable directory, or `nil` when unsupported.
 
 [.api-source]
-link:https://github.com/outskirtslabs/ol.dirs/blob/main/src/ol/dirs.cljc#L63-L68[source,window=_blank]
+link:https://github.com/outskirtslabs/dirs/blob/main/src/ol/dirs.cljc#L63-L68[source,window=_blank]
 
 '''
 
@@ -351,7 +351,7 @@ _platforms: clj_
 Returns the preference directory.
 
 [.api-source]
-link:https://github.com/outskirtslabs/ol.dirs/blob/main/src/ol/dirs.cljc#L70-L75[source,window=_blank]
+link:https://github.com/outskirtslabs/dirs/blob/main/src/ol/dirs.cljc#L70-L75[source,window=_blank]
 
 [discrete]
 === cljs
@@ -368,7 +368,7 @@ _platforms: cljs_
 Returns the preference directory.
 
 [.api-source]
-link:https://github.com/outskirtslabs/ol.dirs/blob/main/src/ol/dirs.cljc#L70-L75[source,window=_blank]
+link:https://github.com/outskirtslabs/dirs/blob/main/src/ol/dirs.cljc#L70-L75[source,window=_blank]
 
 '''
 
@@ -389,7 +389,7 @@ _platforms: clj_
 Returns the user's home directory.
 
 [.api-source]
-link:https://github.com/outskirtslabs/ol.dirs/blob/main/src/ol/dirs.cljc#L77-L79[source,window=_blank]
+link:https://github.com/outskirtslabs/dirs/blob/main/src/ol/dirs.cljc#L77-L79[source,window=_blank]
 
 [discrete]
 === cljs
@@ -404,7 +404,7 @@ _platforms: cljs_
 Returns the user's home directory.
 
 [.api-source]
-link:https://github.com/outskirtslabs/ol.dirs/blob/main/src/ol/dirs.cljc#L77-L79[source,window=_blank]
+link:https://github.com/outskirtslabs/dirs/blob/main/src/ol/dirs.cljc#L77-L79[source,window=_blank]
 
 '''
 
@@ -425,7 +425,7 @@ _platforms: clj_
 Returns the user's audio or music directory, or `nil` when unresolved.
 
 [.api-source]
-link:https://github.com/outskirtslabs/ol.dirs/blob/main/src/ol/dirs.cljc#L81-L83[source,window=_blank]
+link:https://github.com/outskirtslabs/dirs/blob/main/src/ol/dirs.cljc#L81-L83[source,window=_blank]
 
 [discrete]
 === cljs
@@ -440,7 +440,7 @@ _platforms: cljs_
 Returns the user's audio or music directory, or `nil` when unresolved.
 
 [.api-source]
-link:https://github.com/outskirtslabs/ol.dirs/blob/main/src/ol/dirs.cljc#L81-L83[source,window=_blank]
+link:https://github.com/outskirtslabs/dirs/blob/main/src/ol/dirs.cljc#L81-L83[source,window=_blank]
 
 '''
 
@@ -461,7 +461,7 @@ _platforms: clj_
 Returns the user's desktop directory, or `nil` when unresolved.
 
 [.api-source]
-link:https://github.com/outskirtslabs/ol.dirs/blob/main/src/ol/dirs.cljc#L85-L87[source,window=_blank]
+link:https://github.com/outskirtslabs/dirs/blob/main/src/ol/dirs.cljc#L85-L87[source,window=_blank]
 
 [discrete]
 === cljs
@@ -476,7 +476,7 @@ _platforms: cljs_
 Returns the user's desktop directory, or `nil` when unresolved.
 
 [.api-source]
-link:https://github.com/outskirtslabs/ol.dirs/blob/main/src/ol/dirs.cljc#L85-L87[source,window=_blank]
+link:https://github.com/outskirtslabs/dirs/blob/main/src/ol/dirs.cljc#L85-L87[source,window=_blank]
 
 '''
 
@@ -497,7 +497,7 @@ _platforms: clj_
 Returns the user's documents directory, or `nil` when unresolved.
 
 [.api-source]
-link:https://github.com/outskirtslabs/ol.dirs/blob/main/src/ol/dirs.cljc#L89-L91[source,window=_blank]
+link:https://github.com/outskirtslabs/dirs/blob/main/src/ol/dirs.cljc#L89-L91[source,window=_blank]
 
 [discrete]
 === cljs
@@ -512,7 +512,7 @@ _platforms: cljs_
 Returns the user's documents directory, or `nil` when unresolved.
 
 [.api-source]
-link:https://github.com/outskirtslabs/ol.dirs/blob/main/src/ol/dirs.cljc#L89-L91[source,window=_blank]
+link:https://github.com/outskirtslabs/dirs/blob/main/src/ol/dirs.cljc#L89-L91[source,window=_blank]
 
 '''
 
@@ -533,7 +533,7 @@ _platforms: clj_
 Returns the user's downloads directory, or `nil` when unresolved.
 
 [.api-source]
-link:https://github.com/outskirtslabs/ol.dirs/blob/main/src/ol/dirs.cljc#L93-L95[source,window=_blank]
+link:https://github.com/outskirtslabs/dirs/blob/main/src/ol/dirs.cljc#L93-L95[source,window=_blank]
 
 [discrete]
 === cljs
@@ -548,7 +548,7 @@ _platforms: cljs_
 Returns the user's downloads directory, or `nil` when unresolved.
 
 [.api-source]
-link:https://github.com/outskirtslabs/ol.dirs/blob/main/src/ol/dirs.cljc#L93-L95[source,window=_blank]
+link:https://github.com/outskirtslabs/dirs/blob/main/src/ol/dirs.cljc#L93-L95[source,window=_blank]
 
 '''
 
@@ -569,7 +569,7 @@ _platforms: clj_
 Returns the user's font directory, or `nil` when unsupported.
 
 [.api-source]
-link:https://github.com/outskirtslabs/ol.dirs/blob/main/src/ol/dirs.cljc#L97-L99[source,window=_blank]
+link:https://github.com/outskirtslabs/dirs/blob/main/src/ol/dirs.cljc#L97-L99[source,window=_blank]
 
 [discrete]
 === cljs
@@ -584,7 +584,7 @@ _platforms: cljs_
 Returns the user's font directory, or `nil` when unsupported.
 
 [.api-source]
-link:https://github.com/outskirtslabs/ol.dirs/blob/main/src/ol/dirs.cljc#L97-L99[source,window=_blank]
+link:https://github.com/outskirtslabs/dirs/blob/main/src/ol/dirs.cljc#L97-L99[source,window=_blank]
 
 '''
 
@@ -605,7 +605,7 @@ _platforms: clj_
 Returns the user's pictures directory, or `nil` when unresolved.
 
 [.api-source]
-link:https://github.com/outskirtslabs/ol.dirs/blob/main/src/ol/dirs.cljc#L101-L103[source,window=_blank]
+link:https://github.com/outskirtslabs/dirs/blob/main/src/ol/dirs.cljc#L101-L103[source,window=_blank]
 
 [discrete]
 === cljs
@@ -620,7 +620,7 @@ _platforms: cljs_
 Returns the user's pictures directory, or `nil` when unresolved.
 
 [.api-source]
-link:https://github.com/outskirtslabs/ol.dirs/blob/main/src/ol/dirs.cljc#L101-L103[source,window=_blank]
+link:https://github.com/outskirtslabs/dirs/blob/main/src/ol/dirs.cljc#L101-L103[source,window=_blank]
 
 '''
 
@@ -641,7 +641,7 @@ _platforms: clj_
 Returns the user's public sharing directory, or `nil` when unresolved.
 
 [.api-source]
-link:https://github.com/outskirtslabs/ol.dirs/blob/main/src/ol/dirs.cljc#L105-L107[source,window=_blank]
+link:https://github.com/outskirtslabs/dirs/blob/main/src/ol/dirs.cljc#L105-L107[source,window=_blank]
 
 [discrete]
 === cljs
@@ -656,7 +656,7 @@ _platforms: cljs_
 Returns the user's public sharing directory, or `nil` when unresolved.
 
 [.api-source]
-link:https://github.com/outskirtslabs/ol.dirs/blob/main/src/ol/dirs.cljc#L105-L107[source,window=_blank]
+link:https://github.com/outskirtslabs/dirs/blob/main/src/ol/dirs.cljc#L105-L107[source,window=_blank]
 
 '''
 
@@ -677,7 +677,7 @@ _platforms: clj_
 Returns the user's templates directory, or `nil` when unsupported or unresolved.
 
 [.api-source]
-link:https://github.com/outskirtslabs/ol.dirs/blob/main/src/ol/dirs.cljc#L109-L111[source,window=_blank]
+link:https://github.com/outskirtslabs/dirs/blob/main/src/ol/dirs.cljc#L109-L111[source,window=_blank]
 
 [discrete]
 === cljs
@@ -692,7 +692,7 @@ _platforms: cljs_
 Returns the user's templates directory, or `nil` when unsupported or unresolved.
 
 [.api-source]
-link:https://github.com/outskirtslabs/ol.dirs/blob/main/src/ol/dirs.cljc#L109-L111[source,window=_blank]
+link:https://github.com/outskirtslabs/dirs/blob/main/src/ol/dirs.cljc#L109-L111[source,window=_blank]
 
 '''
 
@@ -713,7 +713,7 @@ _platforms: clj_
 Returns the user's videos directory, or `nil` when unresolved.
 
 [.api-source]
-link:https://github.com/outskirtslabs/ol.dirs/blob/main/src/ol/dirs.cljc#L113-L115[source,window=_blank]
+link:https://github.com/outskirtslabs/dirs/blob/main/src/ol/dirs.cljc#L113-L115[source,window=_blank]
 
 [discrete]
 === cljs
@@ -728,7 +728,7 @@ _platforms: cljs_
 Returns the user's videos directory, or `nil` when unresolved.
 
 [.api-source]
-link:https://github.com/outskirtslabs/ol.dirs/blob/main/src/ol/dirs.cljc#L113-L115[source,window=_blank]
+link:https://github.com/outskirtslabs/dirs/blob/main/src/ol/dirs.cljc#L113-L115[source,window=_blank]
 
 '''
 
@@ -751,7 +751,7 @@ _platforms: clj_
 Alias of <<state-home,`state-home`>>.
 
 [.api-source]
-link:https://github.com/outskirtslabs/ol.dirs/blob/main/src/ol/dirs.cljc#L117-L122[source,window=_blank]
+link:https://github.com/outskirtslabs/dirs/blob/main/src/ol/dirs.cljc#L117-L122[source,window=_blank]
 
 [discrete]
 === cljs
@@ -768,7 +768,7 @@ _platforms: cljs_
 Alias of <<state-home,`state-home`>>.
 
 [.api-source]
-link:https://github.com/outskirtslabs/ol.dirs/blob/main/src/ol/dirs.cljc#L117-L122[source,window=_blank]
+link:https://github.com/outskirtslabs/dirs/blob/main/src/ol/dirs.cljc#L117-L122[source,window=_blank]
 
 '''
 
@@ -791,7 +791,7 @@ _platforms: clj_
 Alias of <<config-home,`config-home`>>.
 
 [.api-source]
-link:https://github.com/outskirtslabs/ol.dirs/blob/main/src/ol/dirs.cljc#L124-L129[source,window=_blank]
+link:https://github.com/outskirtslabs/dirs/blob/main/src/ol/dirs.cljc#L124-L129[source,window=_blank]
 
 [discrete]
 === cljs
@@ -808,4 +808,4 @@ _platforms: cljs_
 Alias of <<config-home,`config-home`>>.
 
 [.api-source]
-link:https://github.com/outskirtslabs/ol.dirs/blob/main/src/ol/dirs.cljc#L124-L129[source,window=_blank]
+link:https://github.com/outskirtslabs/dirs/blob/main/src/ol/dirs.cljc#L124-L129[source,window=_blank]

@@ -67,7 +67,7 @@ Project status: *https://docs.outskirtslabs.com/open-source-vital-signs#maturing
 
 * https://docs.outskirtslabs.com/ol.dirs/next/[Docs]
 * https://docs.outskirtslabs.com/ol.dirs/next/api[API Reference]
-* https://github.com/outskirtslabs/ol.dirs/issues[Support via GitHub Issues]
+* https://github.com/outskirtslabs/dirs/issues[Support via GitHub Issues]
 
 == API Notes
 

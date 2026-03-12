@@ -15,4 +15,4 @@
   :version "next",
   :prerelease true,
   :start-path "doc"},
- :repo {:url "https://github.com/outskirtslabs/ol.dirs"}}
+ :repo {:url "https://github.com/outskirtslabs/dirs"}}
