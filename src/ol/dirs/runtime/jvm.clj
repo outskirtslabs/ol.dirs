@@ -1,4 +1,4 @@
-(ns ol.dirs.runtime.jvm
+(ns ^:no-doc ol.dirs.runtime.jvm
   (:require [clojure.java.io :as io]
             [clojure.string :as str]
             [ol.dirs.runtime.windows-ffm :as windows-ffm]))

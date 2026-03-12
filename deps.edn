@@ -18,4 +18,7 @@
                               :license     {:id "EUPL-1.2"
                                             :file "LICENSE"}
                               :description "Cross-platform directory discovery for Clojure, ClojureScript on Node, and ClojureDart"
+                              :platforms   [:clj :cljs :cljd]
+                              :created     "2026-03-12"
+                              :status      :experimental
                               :version     "0.0.1"}}}}

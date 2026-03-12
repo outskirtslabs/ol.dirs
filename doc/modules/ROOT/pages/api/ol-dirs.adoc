@@ -1,0 +1,367 @@
+= ol.dirs
+
+Cross-platform directory lookup for Clojure, ClojureScript on Node, and ClojureDart.
+
+The public API returns strings or vectors of strings and never creates directories.
+
+- arity 0 returns the base directory
+- arity 1 appends an application name
+- arity 2 appends qualifier, organization, and application using platform rules
+
+See <<config-home,`config-home`>>, <<data-home,`data-home`>>, <<state-home,`state-home`>>, and <<home-dir,`home-dir`>>.
+
+[#data-home]
+== data-home
+
+[source,clojure]
+----
+(data-home)
+(data-home application)
+(data-home qualifier organization application)
+----
+
+Returns the writable user data directory.
+
+
+[.api-source]
+link:https://github.com/outskirtslabs/ol.dirs/blob/main/src/ol/dirs.cljc#L14-L19[source,window=_blank]
+
+'''
+
+[#config-home]
+== config-home
+
+[source,clojure]
+----
+(config-home)
+(config-home application)
+(config-home qualifier organization application)
+----
+
+Returns the writable user configuration directory.
+
+
+[.api-source]
+link:https://github.com/outskirtslabs/ol.dirs/blob/main/src/ol/dirs.cljc#L21-L26[source,window=_blank]
+
+'''
+
+[#state-home]
+== state-home
+
+[source,clojure]
+----
+(state-home)
+(state-home application)
+(state-home qualifier organization application)
+----
+
+Returns the writable user state directory.
+
+
+[.api-source]
+link:https://github.com/outskirtslabs/ol.dirs/blob/main/src/ol/dirs.cljc#L28-L33[source,window=_blank]
+
+'''
+
+[#data-dirs]
+== data-dirs
+
+[source,clojure]
+----
+(data-dirs)
+(data-dirs application)
+(data-dirs qualifier organization application)
+----
+
+Returns the shared data search roots as a vector of strings.
+
+
+[.api-source]
+link:https://github.com/outskirtslabs/ol.dirs/blob/main/src/ol/dirs.cljc#L35-L40[source,window=_blank]
+
+'''
+
+[#config-dirs]
+== config-dirs
+
+[source,clojure]
+----
+(config-dirs)
+(config-dirs application)
+(config-dirs qualifier organization application)
+----
+
+Returns the shared configuration search roots as a vector of strings.
+
+
+[.api-source]
+link:https://github.com/outskirtslabs/ol.dirs/blob/main/src/ol/dirs.cljc#L42-L47[source,window=_blank]
+
+'''
+
+[#cache-home]
+== cache-home
+
+[source,clojure]
+----
+(cache-home)
+(cache-home application)
+(cache-home qualifier organization application)
+----
+
+Returns the writable user cache directory.
+
+
+[.api-source]
+link:https://github.com/outskirtslabs/ol.dirs/blob/main/src/ol/dirs.cljc#L49-L54[source,window=_blank]
+
+'''
+
+[#runtime-dir]
+== runtime-dir
+
+[source,clojure]
+----
+(runtime-dir)
+(runtime-dir application)
+(runtime-dir qualifier organization application)
+----
+
+Returns the runtime directory, or `nil` on platforms without one.
+
+
+[.api-source]
+link:https://github.com/outskirtslabs/ol.dirs/blob/main/src/ol/dirs.cljc#L56-L61[source,window=_blank]
+
+'''
+
+[#executable-dir]
+== executable-dir
+
+[source,clojure]
+----
+(executable-dir)
+(executable-dir application)
+(executable-dir qualifier organization application)
+----
+
+Returns the user executable directory, or `nil` when unsupported.
+
+
+[.api-source]
+link:https://github.com/outskirtslabs/ol.dirs/blob/main/src/ol/dirs.cljc#L63-L68[source,window=_blank]
+
+'''
+
+[#preference-dir]
+== preference-dir
+
+[source,clojure]
+----
+(preference-dir)
+(preference-dir application)
+(preference-dir qualifier organization application)
+----
+
+Returns the preference directory.
+
+
+[.api-source]
+link:https://github.com/outskirtslabs/ol.dirs/blob/main/src/ol/dirs.cljc#L70-L75[source,window=_blank]
+
+'''
+
+[#home-dir]
+== home-dir
+
+[source,clojure]
+----
+(home-dir)
+----
+
+Returns the user's home directory.
+
+
+[.api-source]
+link:https://github.com/outskirtslabs/ol.dirs/blob/main/src/ol/dirs.cljc#L77-L79[source,window=_blank]
+
+'''
+
+[#audio-dir]
+== audio-dir
+
+[source,clojure]
+----
+(audio-dir)
+----
+
+Returns the user's audio or music directory, or `nil` when unresolved.
+
+
+[.api-source]
+link:https://github.com/outskirtslabs/ol.dirs/blob/main/src/ol/dirs.cljc#L81-L83[source,window=_blank]
+
+'''
+
+[#desktop-dir]
+== desktop-dir
+
+[source,clojure]
+----
+(desktop-dir)
+----
+
+Returns the user's desktop directory, or `nil` when unresolved.
+
+
+[.api-source]
+link:https://github.com/outskirtslabs/ol.dirs/blob/main/src/ol/dirs.cljc#L85-L87[source,window=_blank]
+
+'''
+
+[#document-dir]
+== document-dir
+
+[source,clojure]
+----
+(document-dir)
+----
+
+Returns the user's documents directory, or `nil` when unresolved.
+
+
+[.api-source]
+link:https://github.com/outskirtslabs/ol.dirs/blob/main/src/ol/dirs.cljc#L89-L91[source,window=_blank]
+
+'''
+
+[#download-dir]
+== download-dir
+
+[source,clojure]
+----
+(download-dir)
+----
+
+Returns the user's downloads directory, or `nil` when unresolved.
+
+
+[.api-source]
+link:https://github.com/outskirtslabs/ol.dirs/blob/main/src/ol/dirs.cljc#L93-L95[source,window=_blank]
+
+'''
+
+[#font-dir]
+== font-dir
+
+[source,clojure]
+----
+(font-dir)
+----
+
+Returns the user's font directory, or `nil` when unsupported.
+
+
+[.api-source]
+link:https://github.com/outskirtslabs/ol.dirs/blob/main/src/ol/dirs.cljc#L97-L99[source,window=_blank]
+
+'''
+
+[#picture-dir]
+== picture-dir
+
+[source,clojure]
+----
+(picture-dir)
+----
+
+Returns the user's pictures directory, or `nil` when unresolved.
+
+
+[.api-source]
+link:https://github.com/outskirtslabs/ol.dirs/blob/main/src/ol/dirs.cljc#L101-L103[source,window=_blank]
+
+'''
+
+[#public-dir]
+== public-dir
+
+[source,clojure]
+----
+(public-dir)
+----
+
+Returns the user's public sharing directory, or `nil` when unresolved.
+
+
+[.api-source]
+link:https://github.com/outskirtslabs/ol.dirs/blob/main/src/ol/dirs.cljc#L105-L107[source,window=_blank]
+
+'''
+
+[#template-dir]
+== template-dir
+
+[source,clojure]
+----
+(template-dir)
+----
+
+Returns the user's templates directory, or `nil` when unsupported or unresolved.
+
+
+[.api-source]
+link:https://github.com/outskirtslabs/ol.dirs/blob/main/src/ol/dirs.cljc#L109-L111[source,window=_blank]
+
+'''
+
+[#video-dir]
+== video-dir
+
+[source,clojure]
+----
+(video-dir)
+----
+
+Returns the user's videos directory, or `nil` when unresolved.
+
+
+[.api-source]
+link:https://github.com/outskirtslabs/ol.dirs/blob/main/src/ol/dirs.cljc#L113-L115[source,window=_blank]
+
+'''
+
+[#state-dir]
+== state-dir
+
+[source,clojure]
+----
+(state-dir)
+(state-dir application)
+(state-dir qualifier organization application)
+----
+
+Alias of <<state-home,`state-home`>>.
+
+
+[.api-source]
+link:https://github.com/outskirtslabs/ol.dirs/blob/main/src/ol/dirs.cljc#L117-L122[source,window=_blank]
+
+'''
+
+[#config-dir]
+== config-dir
+
+[source,clojure]
+----
+(config-dir)
+(config-dir application)
+(config-dir qualifier organization application)
+----
+
+Alias of <<config-home,`config-home`>>.
+
+
+[.api-source]
+link:https://github.com/outskirtslabs/ol.dirs/blob/main/src/ol/dirs.cljc#L124-L129[source,window=_blank]

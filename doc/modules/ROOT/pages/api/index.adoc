@@ -1,0 +1,12 @@
+= API Reference
+
+This release publishes 1 namespace.
+
+[cols="1,3",options="header",stripes=hover]
+|===
+| Namespace | Summary
+
+| xref:api/ol-dirs.adoc[`ol.dirs`]
+| Cross-platform directory lookup for Clojure, ClojureScript on Node, and ClojureDart.
+
+|===

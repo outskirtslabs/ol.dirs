@@ -1,4 +1,4 @@
-(ns ol.dirs.runtime.cljd
+(ns ^:no-doc ol.dirs.runtime.cljd
   {:no-dynamic true}
   (:require ["dart:io" :as dart-io]
             [clojure.string :as str]

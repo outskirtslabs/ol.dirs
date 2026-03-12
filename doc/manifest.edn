@@ -1,0 +1,18 @@
+{:manifest/version 1,
+ :project
+ {:id "ol.dirs",
+  :coord "com.outskirtslabs/ol.dirs",
+  :description
+  "Cross-platform directory discovery for Clojure, ClojureScript on Node, and ClojureDart",
+  :license "EUPL-1.2",
+  :platforms [:clj :cljs :cljd],
+  :status :experimental,
+  :created "2026-03-12",
+  :version "0.0.1"},
+ :docs
+ {:component "ol.dirs",
+  :title "ol.dirs",
+  :version "next",
+  :prerelease true,
+  :start-path "doc"},
+ :repo {:url "https://github.com/outskirtslabs/ol.dirs"}}

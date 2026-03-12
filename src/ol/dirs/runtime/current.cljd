@@ -1,4 +1,4 @@
-(ns ol.dirs.runtime.current
+(ns ^:no-doc ol.dirs.runtime.current
   {:no-dynamic true}
   (:require [ol.dirs.runtime.cljd :as cljd]))
 

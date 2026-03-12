@@ -1,4 +1,4 @@
-(ns ol.dirs.runtime.windows-ffm)
+(ns ^:no-doc ol.dirs.runtime.windows-ffm)
 
 (def ^:private known-folder-ids
   {:profile "{5E6C858F-0E22-4760-9AFE-EA3317B67173}"

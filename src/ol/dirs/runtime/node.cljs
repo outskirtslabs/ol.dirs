@@ -1,4 +1,4 @@
-(ns ol.dirs.runtime.node
+(ns ^:no-doc ol.dirs.runtime.node
   (:require ["fs" :as fs]
             ["os" :as os]
             ["path" :as node-path]

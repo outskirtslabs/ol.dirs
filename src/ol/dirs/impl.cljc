@@ -1,4 +1,4 @@
-(ns ol.dirs.impl
+(ns ^:no-doc ol.dirs.impl
   (:require [clojure.string :as str]))
 
 (defn windows-home-directory [env]
