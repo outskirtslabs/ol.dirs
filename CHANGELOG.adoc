@@ -6,15 +6,11 @@ This project uses https://www.taoensso.com/break-versioning[*Break Versioning*].
 
 == ++[++UNRELEASED++]++
 
-* Added Antora documentation integration for Outskirts Labs Docs.
-* Added top-level security policy and changelog documents.
-
 [[v001-2026-03-12]]
-== `v0.0.1` (2026-03-12)
+== `v0.1.0` (2026-03-12)
 
 This is the first public release of this codebase under the `ol.dirs` name.
 
 This release establishes the first published cross-platform directory discovery API for Clojure, ClojureScript on Node, and ClojureDart.
 
 Private variations of the clj/JVM code has been used in production for a awhile, but nonetheless I want to be cautious so we're starting with sub-1.0 versioning.
-

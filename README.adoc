@@ -5,7 +5,7 @@ A 0-dependency implementation of XDG base directories, systemd unit directories,
 ____
 
 image:https://img.shields.io/badge/doc-outskirtslabs-orange.svg[doc,link=https://docs.outskirtslabs.com/ol.dirs/next/]
-image:https://img.shields.io/badge/status-experimental-red.svg[status: experimental,link=https://docs.outskirtslabs.com/open-source-vital-signs#experimental]
+image:https://img.shields.io/badge/status-maturing-yellow.svg[status: maturing,link=https://docs.outskirtslabs.com/open-source-vital-signs#maturing]
 
 `ol.dirs` returns string paths or vectors of string paths. It does not create directories, does not check whether they exist, and carries no runtime dependencies.
 
@@ -31,9 +31,20 @@ image:https://img.shields.io/badge/status-experimental-red.svg[status: experimen
 | yes
 |===
 
-Project status: *https://docs.outskirtslabs.com/open-source-vital-signs#experimental[Experimental]*.
+Project status: *https://docs.outskirtslabs.com/open-source-vital-signs#maturing[Maturing]*.
 
-== Example Usage
+== Installation
+
+[source,clojure]
+----
+;; deps.edn
+{:deps {com.outskirtslabs/dirs {:mvn/version "0.1.0"}}}
+
+;; Leiningen
+[com.outskirtslabs/dirs "0.1.0"]
+----
+
+== Quick Start
 
 [source,clojure]
 ----
