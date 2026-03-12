@@ -12,7 +12,7 @@
  :docs
  {:component "ol.dirs",
   :title "ol.dirs",
-  :version "next",
-  :prerelease true,
+  :version "0.1",
+  :prerelease false,
   :start-path "doc"},
- :repo {:url "https://github.com/outskirtslabs/ol.dirs"}}
+ :repo {:url "https://github.com/outskirtslabs/dirs"}}

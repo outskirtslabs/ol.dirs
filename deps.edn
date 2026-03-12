@@ -14,7 +14,7 @@
                                       slipset/deps-deploy           {:mvn/version "0.2.2"}}
                          :ns-default build}
            :neil        {:project {:name        com.outskirtslabs/dirs
-                                   :url         "https://github.com/outskirtslabs/ol.dirs"
+                                   :url         "https://github.com/outskirtslabs/dirs"
                                    :license     {:id   "EUPL-1.2"
                                                  :file "LICENSE"}
                                    :description "A 0-dependency implementation of XDG base directories, systemd unit directories, Windows Known Folder paths, and macOS standard directories for Clojure, ClojureScript, and ClojureDart."

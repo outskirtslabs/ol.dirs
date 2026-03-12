@@ -1,7 +1,6 @@
 ---
 name: ol.dirs
 title: ol.dirs
-version: next
-prerelease: true
+version: '0.1'
 nav:
   - modules/ROOT/nav.adoc

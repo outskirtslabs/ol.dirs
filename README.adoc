@@ -4,8 +4,9 @@ ____
 A 0-dependency implementation of XDG base directories, systemd unit directories, Windows Known Folder paths, and macOS standard directories for Clojure, ClojureScript, and ClojureDart.
 ____
 
-image:https://img.shields.io/badge/doc-outskirtslabs-orange.svg[doc,link=https://docs.outskirtslabs.com/ol.dirs/next/]
+image:https://img.shields.io/badge/doc-outskirtslabs-orange.svg[doc,link=https://docs.outskirtslabs.com/ol.dirs/0.1/]
 image:https://img.shields.io/badge/status-maturing-yellow.svg[status: maturing,link=https://docs.outskirtslabs.com/open-source-vital-signs#maturing]
+https://clojars.org/com.outskirtslabs/dirs[image:https://img.shields.io/clojars/v/com.outskirtslabs/dirs.svg[Clojars Project]]
 
 `ol.dirs` returns string paths or vectors of string paths. It does not create directories, does not check whether they exist, and carries no runtime dependencies.
 
@@ -64,9 +65,9 @@ Project status: *https://docs.outskirtslabs.com/open-source-vital-signs#maturing
 
 == Documentation
 
-* https://docs.outskirtslabs.com/ol.dirs/next/[Docs]
-* https://docs.outskirtslabs.com/ol.dirs/next/api[API Reference]
-* https://github.com/outskirtslabs/ol.dirs/issues[Support via GitHub Issues]
+* https://docs.outskirtslabs.com/ol.dirs/0.1/[Docs]
+* https://docs.outskirtslabs.com/ol.dirs/0.1/api[API Reference]
+* https://github.com/outskirtslabs/dirs/issues[Support via GitHub Issues]
 
 == API Notes
 

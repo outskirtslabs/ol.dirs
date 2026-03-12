@@ -71,7 +71,7 @@
          gen-docs
          {:doc  "Generate all Antora documentation"
           :task (gen-docs/generate! {:source-paths      ["src"]
-                                     :github-repo       "https://github.com/outskirtslabs/ol.dirs"
+                                     :github-repo       "https://github.com/outskirtslabs/dirs"
                                      :antora-start-path "doc"})}
 
          jar     {:override-builtin true
